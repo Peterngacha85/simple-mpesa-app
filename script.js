@@ -9,7 +9,7 @@ function home(){
     single_service[3].style.zIndex = 0;
     single_service[4].style.zIndex = 0;
     single_service[5].style.zIndex = 0;
-    single_service[6].style.zIndex = 0;
+    single_service[2].style.zIndex = 0;
 
 
 
