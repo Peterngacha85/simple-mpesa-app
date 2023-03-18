@@ -16,7 +16,7 @@
         <hr class="hr1">
         <!-- mpesa services ************************************** -->
         <div id="mpesa_services" class="services_hide">
-            <button class="services_hide" onclick="sending()" >Send Money</button>
+            <button class="services_hide" onclick="sending()">Send Money</button>
             <button class="services_hide" onclick="withdraw()">Withdraw Cash</button>
             <button class="services_hide" onclick="buy_airtime()">Buy Airtime</button>
             <button class="services_hide" onclick="loan_saving()">Loan And Saving</button>
@@ -26,16 +26,41 @@
         <!-- sending************************************************* -->
            <div id="sending" class="sending_hide single_service">
             <div id="sending_div">
+               <form action="">
                 <label for="number">Enter Phone Number <br> <br></label>
-                <input type="number" id="number">
+                <input type="number" id="Phone"> 
                 <div id="send_cancel_btn">
-                    <button id="send">Send</button>
-                    <button id="cancel">Cancel</button>
+                    <button id="send" type="button"  onclick="amountToSend()">SEND</button>
+                    <button  id="cancel" type="reset">Cancel</button>
+                    
                 </div>
+               </form>
+                <br>
+                <button class=" services_hide HOME" onclick="home()">HOME</button>
+            </div>
+           </div>
+           <!-- amount to send ******************************* -->
+           <div id="amount_to_Send" class="amount_to_send_hide single_service">
+            <div id="amount_to_send_div">
+               <form action="">
+                <label for="number">Enter amount to send <br> <br></label>
+                <input type="number" id="Amount"> 
+                <div id="send_cancel_btn">
+                    <button id="send" type="button"  onclick="confirmation_message()">SEND</button>
+                    <button  id="cancel" type="reset">Cancel</button>
+                    
+                </div>
+               </form>
                 <br>
                 <button class="services_hide HOME" onclick="home()">HOME</button>
             </div>
            </div>
+           <!-- confirmation message ******************************* -->
+        <div id="confirmation_message" class="confirmation_message_hide single_service">
+            <h5 class="confirmation_text">RCG5XQ2RLB Confirmed. Ksh <span id="amount_sent">*****</span> sent to <span id="phone_number_new">000000</span> on 16/3/23 at 7:27 PM. New M-PESA balance is Ksh0.00. Transaction cost, Ksh0.00. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>
+            <br>
+            <button class="services_hide HOME" onclick="home()">HOME</button>
+        </div>
 <!-- withdraw*************************************************** -->
            <div id="withdraw" class="withdraw_hide single_service">
             <div id="withdraw_div">
@@ -69,12 +94,15 @@
                     <button class="services_hide HOME" onclick="home()">HOME</button>
                 </div>
             </div>  
+    
+
         <!-- my account ******************************* -->
         <div id="my_account" class="my_account_hide single_service">
-            <h5 id="account_balance_msg">RCD0OZPM1I Confirmed. Your account balance was: M-PESA Account : Ksh<span id="kipara">754.09</span> on 13/3/23 at 4:01 PM. Dial *234*0# OK to check your FULIZA LIMIT & complete your M-PESA transaction.</h5>
+            <h5 id="account_balance_msg">RCD0OZPM1I Confirmed. Your account balance was: M-PESA Account : Ksh<span id="balance">1050</span> on 13/3/23 at 4:01 PM. Dial *234*0# OK to check your FULIZA LIMIT & complete your M-PESA transaction.</h5>
             <br>
             <button class="services_hide HOME" onclick="home()">HOME</button>
         </div>
+        
 
 
 
