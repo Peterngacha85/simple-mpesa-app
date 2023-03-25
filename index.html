@@ -11,9 +11,9 @@
     <div id="main_container">
         <div id="logo">
             <img src="images/mpesa logo.png" alt="Mpesa Logo" class="img_logo">
-       
+        
         </div>
-        <hr class="hr1">
+        <hr class="hr1" id="hr1">
         <!-- mpesa services ************************************** -->
         <div id="mpesa_services" class="services_hide">
             <button class="services_hide" onclick="sending()">Send Money</button>
@@ -30,7 +30,7 @@
                 <label for="number">Enter Phone Number <br> <br></label>
                 <input type="number" id="Phone"> 
                 <div id="send_cancel_btn">
-                    <button id="send" type="button"  onclick="amountToSend()">SEND</button>
+                    <button id="send" type="button"  onclick="amountToSend()" >SEND</button>
                     <button  id="cancel" type="reset">Cancel</button>
                     
                 </div>
@@ -46,13 +46,13 @@
                 <label for="number">Enter amount to send <br> <br></label>
                 <input type="number" id="Amount" value=""> 
                 <div id="send_cancel_btn">
-                    <button id="send" type="button"  onclick="confirmation_message()">SEND</button>
-                    <button  id="cancel" type="reset">Cancel</button>
+                    <button id="send" type="button" onclick="confirmation_message()">SEND</button>
+                    <button  id="cancel" type="reset" onclick="anntest()">Cancel</button>
                     
                 </div>
                </form>
                 <br>
-                <button class="services_hide HOME" onclick="home() ,location.reload()">HOMEz</button>
+                <button class="services_hide HOME" onclick="home() ,location.reload()">HOME</button>
             </div>
            </div>
            <!-- confirmation message ******************************* -->
@@ -61,14 +61,54 @@
             <br>
             <button class="services_hide HOME" onclick="home()" >HOME</button>
         </div>
-<!-- withdraw*************************************************** -->
+<!-- withdraw*************** ************************************ -->
            <div id="withdraw" class="withdraw_hide single_service">
             <div id="withdraw_div">
-                    <button id="agent">From Agent</button>
+                    <button id="agent" onclick="agent_services()">From Agent</button>
                     <button id="atm">From ATM</button>
                     <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
                 </div>
             </div>
+<!-- withdraw from agent **************************** -->
+            <div id="agent_no" class="single_service">
+                <div id="agent_no_div">
+                    <form action="">
+                        <label for="AGENT_NO">Enter Agent Number: <br></label>
+                        <input type="number" id="AGENT_NO">
+                        <br>
+                        <button id="send" type="button" onclick="withdraw_amount()" >SEND</button>
+                        <button  id="cancel" type="reset">Cancel</button>
+                        <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
+
+                    </form>
+                </div>
+            </div>
+            <!-- withdrawal_amount_from_agent ************************* -->
+            <div id="agent_no_withdrawal" class="single_service">
+                <div id="agent_no_withdrawal_div">
+                    <form action="">
+                        <label for="AGENT_NO_AMOUNT">Enter Amount to Withdraw <br></label>
+                        <input type="number" id="AGENT_WITHDRAW">
+                        <br>
+                        <button id="send" type="button" onclick="agentSuccess()" >SEND</button>
+                        <button  id="cancel" type="reset">Cancel</button>
+                        <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
+
+                    </form>
+                </div>
+            </div>
+            <!-- withdral success confirmation message *************I -->
+            <div id="withdraw_success" class="single_service">
+                <h5 id="success_fail" class="confirmation_text">RHG5XQ2RLB Confirmed. Ksh <span id="amount_withdrawn">####</span> was withdrawn from <span id="withdrawn_from"> ### </span> on <span id="DATE">DATE</span>. New M-PESA balance is Ksh<span id="Balance"></span>. Transaction cost, Ksh <span id="Transaction">***</span>. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>
+                  <br>
+            <button class="services_hide HOME" onclick="home()" >HOME</button>
+            </div>
+            <!-- withdral failled confirmation message *************I -->
+            <!-- <div id="withdraw_success" class="single_service">
+                <h5 id="h5" class="confirmation_text">RHG5XQ2RLB Confirmed. Ksh <span>####</span> sent to <span id="phone_number_new"> ### </span> on <span id="DATE">DATE</span>. New M-PESA balance is Ksh<span id="Balance"></span>. Transaction cost, Ksh <span id="Transaction">***</span>. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>
+                  <br>
+            <button class="services_hide HOME" onclick="home()" >HOME</button>
+            </div> -->
  <!-- buy airtime *************************************** -->
  <div id="buy_airtime" class="buy_airtime_hide single_service">
     <div id="buy_airtime_div">
