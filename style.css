@@ -17,11 +17,9 @@
 }
 #logo{
     width: 80%;
-    height: 80px;
-
-
-    /* background: red; */
+    height: 100px;
 }
+
 #mpesa_services{
     background: #fff;
     width: 100%;
@@ -35,8 +33,11 @@
 
 .hr1{
     background: rgba(4, 183, 4, 0.845);
+    position: absolute;
     width: 100%;
+    top: 80px;
     height: 3px;
+    z-index: 5;
 
 }
 .img_logo{
@@ -125,10 +126,47 @@ input:focus{
     background: #fff;
     width: 100%;
     height: 70dvh;
+    padding-top: 10px;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    z-index: 0;
+
+}
+/* agent number *********************** */
+#agent_no{
+    background: #fff;
+    width: 100%;
+    height: 70dvh;
+    padding-top: 10px;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    z-index: 0;
+
+}
+/* agent_no_withdrawal ********************** */
+#agent_no_withdrawal{
+    background: #fff;
+    width: 100%;
+    height: 70dvh;
+    padding-top: 10px;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    z-index: 0;
+
+}
+/* withdraw_success **************** */
+#withdraw_success{
+    background: #fff;
+    width: 100%;
+    height: 70dvh;
     position: absolute;
     top: 90px;
     left: 0px;
     z-index: 0;
+
 }
 /* buy airtime******************************* */
 #buy_airtime{
