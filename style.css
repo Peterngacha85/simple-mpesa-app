@@ -6,11 +6,11 @@
 #main_container{
     width: 300px !important;
     max-width: 100%;
-    height: 80dvh !important;
+    height: 90dvh !important;
     max-height: 100%;
     border: 3px solid rgba(4, 183, 4, 0.845);
     border-radius: 10px;
-    margin: 50px 200px;
+    margin: 10px 20px;
     position: relative;
     overflow: hidden;
 
@@ -244,13 +244,13 @@ input:focus{
 /* @media querry ************************************ */
 @media screen  and (max-width:767px),(min-width: 320px){
     #main_container{
-        width: 280px;
+        width: 90%x;
         max-width: 100%;
         height: 70dvh;
         max-height: 100%;
         border: 2px solid rgba(4, 183, 4, 0.845);
         border-radius: 10px;
-        margin: 10px;
+        margin:9% auto;
         position: relative;
         overflow: hidden;
     
