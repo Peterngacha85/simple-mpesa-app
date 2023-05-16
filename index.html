@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
     <title>MPESA</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div id="main_container">
         <div id="logo">
             <img src="images/mpesa logo.png" alt="Mpesa Logo" class="img_logo">
-        
+
         </div>
         <hr class="hr1" id="hr1">
         <!-- mpesa services ************************************** -->
@@ -24,102 +26,112 @@
             <button class="services_hide" onclick="my_account()">My Account</button>
         </div>
         <!-- sending************************************************* -->
-           <div id="sending" class="sending_hide single_service">
+        <div id="sending" class="sending_hide single_service">
             <div id="sending_div">
-               <form action="">
-                <label for="number">Enter Phone Number <br> <br></label>
-                <input type="number" id="Phone"> 
-                <div id="send_cancel_btn">
-                    <button id="send" type="button"  onclick="amountToSend()" >SEND</button>
-                    <button  id="cancel" type="reset">Cancel</button>
-                    
-                </div>
-               </form>
+                <form action="">
+                    <label for="number">Enter Phone Number <br> <br></label>
+                    <input type="number" id="Phone">
+                    <div id="send_cancel_btn">
+                        <button id="send" type="button" onclick="amountToSend()">SEND</button>
+                        <button id="cancel" type="reset">Cancel</button>
+
+                    </div>
+                </form>
                 <br>
                 <button class=" services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
             </div>
-           </div>
-           <!-- amount to send ******************************* -->
-           <div id="amount_to_Send" class="amount_to_send_hide single_service">
+        </div>
+        <!-- amount to send ******************************* -->
+        <div id="amount_to_Send" class="amount_to_send_hide single_service">
             <div id="amount_to_send_div">
-               <form action="">
-                <label for="number">Enter amount to send <br> <br></label>
-                <input type="number" id="Amount" value=""> 
-                <div id="send_cancel_btn">
-                    <button id="send" type="button" onclick="confirmation_message()">SEND</button>
-                    <button  id="cancel" type="reset" onclick="anntest()">Cancel</button>
-                    
-                </div>
-               </form>
+                <form action="">
+                    <label for="number">Enter amount to send <br> <br></label>
+                    <input type="number" id="Amount" value="">
+                    <div id="send_cancel_btn">
+                        <button id="send" type="button" onclick="confirmation_message()">SEND</button>
+                        <button id="cancel" type="reset" onclick="anntest()">Cancel</button>
+
+                    </div>
+                </form>
                 <br>
                 <button class="services_hide HOME" onclick="home() ,location.reload()">HOME</button>
             </div>
-           </div>
-           <!-- confirmation message ******************************* -->
-        <div id="confirmation_message" class="confirmation_message_hide single_service">
-            <h5 id="h5" class="confirmation_text">RCG5XQ2RLB Confirmed. Ksh <span id="amount_sent" style="color: red;"></span> sent to <span id="phone_number_new"></span> on <span id="DATE">DATE</span>. New M-PESA balance is Ksh<span id="Balance"></span>. Transaction cost, Ksh <span id="Transaction">***</span>. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>
-            <br>
-            <button class="services_hide HOME" onclick="home()" >HOME</button>
         </div>
-<!-- withdraw*************** ************************************ -->
-           <div id="withdraw" class="withdraw_hide single_service">
+        <!-- confirmation message ******************************* -->
+        <div id="confirmation_message" class="confirmation_message_hide single_service">
+            <h5 id="h5" class="confirmation_text">RCG5XQ2RLB Confirmed. Ksh <span id="amount_sent"
+                    style="color: red;"></span> sent to <span id="phone_number_new"></span> on <span
+                    id="DATE">DATE</span>. New M-PESA balance is Ksh<span id="Balance"></span>. Transaction cost, Ksh
+                <span id="Transaction">***</span>. Amount you can transact within the day is 299,860.00. Use M-PESA app
+                to send money conviniently mpesaapp.page.link/ggGV</h5>
+            <br>
+            <button class="services_hide HOME" onclick="home()">HOME</button>
+        </div>
+        <!-- withdraw*************** ************************************ -->
+        <div id="withdraw" class="withdraw_hide single_service">
             <div id="withdraw_div">
-                    <button id="agent" onclick="agent_services()">From Agent</button>
-                    <button id="atm">From ATM</button>
+                <button id="agent" onclick="agent_services()">From Agent</button>
+                <button id="atm">From ATM</button>
+                <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
+            </div>
+        </div>
+        <!-- withdraw from agent **************************** -->
+        <div id="agent_no" class="single_service">
+            <div id="agent_no_div">
+                <form action="">
+                    <label for="AGENT_NO">Enter Agent Number: <br></label>
+                    <input type="number" id="AGENT_NO">
+                    <br>
+                    <button id="send" type="button" onclick="withdraw_amount()">SEND</button>
+                    <button id="cancel" type="reset">Cancel</button>
                     <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
-                </div>
-            </div>
-<!-- withdraw from agent **************************** -->
-            <div id="agent_no" class="single_service">
-                <div id="agent_no_div">
-                    <form action="">
-                        <label for="AGENT_NO">Enter Agent Number: <br></label>
-                        <input type="number" id="AGENT_NO">
-                        <br>
-                        <button id="send" type="button" onclick="withdraw_amount()" >SEND</button>
-                        <button  id="cancel" type="reset">Cancel</button>
-                        <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
 
-                    </form>
-                </div>
+                </form>
             </div>
-            <!-- withdrawal_amount_from_agent ************************* -->
-            <div id="agent_no_withdrawal" class="single_service">
-                <div id="agent_no_withdrawal_div">
-                    <form action="">
-                        <label for="AGENT_NO_AMOUNT">Enter Amount to Withdraw <br></label>
-                        <input type="number" id="AGENT_WITHDRAW">
-                        <br>
-                        <button id="send" type="button" onclick="agentSuccess()" >SEND</button>
-                        <button  id="cancel" type="reset">Cancel</button>
-                        <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
+        </div>
+        <!-- withdrawal_amount_from_agent ************************* -->
+        <div id="agent_no_withdrawal" class="single_service">
+            <div id="agent_no_withdrawal_div">
+                <form action="">
+                    <label for="AGENT_NO_AMOUNT">Enter Amount to Withdraw <br></label>
+                    <input type="number" id="AGENT_WITHDRAW">
+                    <br>
+                    <button id="send" type="button" onclick="agentSuccess()">SEND</button>
+                    <button id="cancel" type="reset">Cancel</button>
+                    <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
 
-                    </form>
-                </div>
+                </form>
             </div>
-            <!-- withdral success confirmation message *************I -->
-            <div id="withdraw_success" class="single_service">
-                <h5 id="success_fail" class="confirmation_text">RHG5XQ2RLB Confirmed. Ksh <span id="amount_withdrawn">####</span> was withdrawn from <span id="withdrawn_from"> ### </span> on <span id="DATE">DATE</span>. New M-PESA balance is Ksh<span id="Balance"></span>. Transaction cost, Ksh <span id="Transaction">***</span>. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>
-                  <br>
-            <button class="services_hide HOME" onclick="home()" >HOME</button>
-            </div>
-            <!-- withdral failled confirmation message *************I -->
-            <!-- <div id="withdraw_success" class="single_service">
+        </div>
+        <!-- withdral success confirmation message *************I -->
+        <div id="withdraw_success" class="single_service">
+            <h5 id="success_fail" class="confirmation_text">
+                <!-- RHG5XQ2RLB Confirmed. Ksh <span
+                    id="amount_withdrawn">####</span> was withdrawn from <span id="withdrawn_from"> ### </span> on <span
+                    id="DATE">DATE</span>. New M-PESA balance is Ksh<span id="Balance"></span>. Transaction cost, Ksh
+                <span id="Transaction">***</span>. Amount you can transact within the day is 299,860.00. Use M-PESA app
+                to send money conviniently mpesaapp.page.link/ggGV -->
+            </h5>
+            <br>
+            <button class="services_hide HOME" onclick="home()">HOME</button>
+        </div>
+        <!-- withdral failled confirmation message *************I -->
+        <!-- <div id="withdraw_success" class="single_service">
                 <h5 id="h5" class="confirmation_text">RHG5XQ2RLB Confirmed. Ksh <span>####</span> sent to <span id="phone_number_new"> ### </span> on <span id="DATE">DATE</span>. New M-PESA balance is Ksh<span id="Balance"></span>. Transaction cost, Ksh <span id="Transaction">***</span>. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>
                   <br>
             <button class="services_hide HOME" onclick="home()" >HOME</button>
             </div> -->
- <!-- buy airtime *************************************** -->
- <div id="buy_airtime" class="buy_airtime_hide single_service">
-    <div id="buy_airtime_div">
-            <button id="my_phone">My Phone</button>
-            <button id="other_phone">Other Phone</button>
-            <button class="services_hide HOME" onclick="home() ,location.reload()">HOME</button>
+        <!-- buy airtime *************************************** -->
+        <div id="buy_airtime" class="buy_airtime_hide single_service">
+            <div id="buy_airtime_div">
+                <button id="my_phone">My Phone</button>
+                <button id="other_phone">Other Phone</button>
+                <button class="services_hide HOME" onclick="home() ,location.reload()">HOME</button>
+            </div>
         </div>
-    </div>
-    <!-- loan and saving********************************** -->
-    <div id="loan_saving" class="loan_saving_hide single_service">
-        <div id="loan_saving_div">
+        <!-- loan and saving********************************** -->
+        <div id="loan_saving" class="loan_saving_hide single_service">
+            <div id="loan_saving_div">
                 <button id="Mshwari">Mshwari</button>
                 <button id="KCB_Mpesa">KCB Mpesa</button>
                 <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
@@ -128,27 +140,30 @@
         <!-- lipa na mpesa************************************** -->
         <div id="lipa_na_mpesa" class="lipa_na_mpesa_hide single_service">
             <div id="lipa_na_mpesa_div">
-                    <button id="paybill">Pay Bill</button>
-                    <button id="Buy_goods_and_services">Buy Goods and Services</button>
-                    <button id="pochi_la_biashara">Pochi La Biashara</button>
-                    <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
-                </div>
-            </div>  
-    
+                <button id="paybill">Pay Bill</button>
+                <button id="Buy_goods_and_services">Buy Goods and Services</button>
+                <button id="pochi_la_biashara">Pochi La Biashara</button>
+                <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
+            </div>
+        </div>
+
 
         <!-- my account ******************************* -->
         <div id="my_account" class="my_account_hide single_service">
-            <h5 id="account_balance_msg">RCD0OZPM1I Confirmed. Your account balance was: M-PESA Account : Ksh<span id="balance">1050</span> on 13/3/23 at 4:01 PM. Dial *234*0# OK to check your FULIZA LIMIT & complete your M-PESA transaction.</h5>
+            <h5 id="account_balance_msg">RCD0OZPM1I Confirmed. Your account balance was: M-PESA Account : Ksh<span
+                    id="balance">1050</span> on 13/3/23 at 4:01 PM. Dial *234*0# OK to check your FULIZA LIMIT &
+                complete your M-PESA transaction.</h5>
             <br>
             <button class="services_hide HOME" onclick="home()  ,location.reload()">HOME</button>
         </div>
-        
+
 
 
 
 
     </div>
-    
-<script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
