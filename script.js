@@ -77,7 +77,10 @@ function my_account(){
 
 let mpesa_balance = 1800, old_mpesa_balance = 1800;
 
-    date = Date();
+//concert date and time to local time amd date.
+const newDate  = new Date()
+    date = newDate.toLocaleString();
+    
 
     function amountToSend(){
         amount_to_Send.style.zIndex = 1;
@@ -96,14 +99,6 @@ function confirmation_message(){
     const Tell = document.getElementById("Phone");
     phoneNumberNew.style.color = "red";
 
-// if test 
-// document.getElementById("send").disabled = false;
-
-// if(document.getElementById("Phone").value= ' '){
-//     document.getElementById("send").disabled = true;
-// }else{
-//     document.getElementById("send").disabled = false;
-// }
 
 
 
@@ -116,17 +111,12 @@ function confirmation_message(){
     const Balance = document.getElementById('Balance');
     let amountSENT =  parseInt(document.getElementById("Amount").value);
     const amountSENTcolor = document.getElementById("Amount");
-    let transaction_cost = (0.08 * amountSENT);
+    let transaction_cost = ((0.012 * amountSENT).toFixed(2));
 
 
-    // if(amountSENTcolor.length < 0){
-        // document.getElementById("send").disabled = true;
 
-    // }
-
-    let new_balance = mpesa_balance - amountSENT - transaction_cost;
+    let new_balance = (mpesa_balance - amountSENT - transaction_cost).toFixed(2);
     mpesa_balance = new_balance;
-    transaction_cost = (0.08 * amountSENT);
     Transaction.innerHTML = transaction_cost;
     Transaction.style.color = "red";
 
@@ -136,24 +126,19 @@ function confirmation_message(){
     if(old_mpesa_balance > amountSENT && mpesa_balance > 0){
 
         h.innerHTML = '<h5 id="h5" class="confirmation_text">RCG5XQ2RLB Confirmed. Ksh <span id="amount_sent">' + amountSENT +'</span> sent to <span id="phone_number_new"> '+TELL+' </span> on <span id="DATE"> ' +date+' </span>. New M-PESA balance is Ksh<span id="Balance"> '+ mpesa_balance +' </span>. Transaction cost, Ksh <span id="Transaction"> '+ transaction_cost +' </span>. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>'
-        mpesa_balance = mpesa_balance.toFixed(2);
+      //   mpesa_balance = mpesa_balance.toFixed(2);
+          mpesa_balance = parseFloat(mpesa_balance).toFixed(2); // Convert to number and round to 2 decimal places
         Balance.innerHTML = new_balance;
-        old_mpesa_balance =  mpesa_balance;
-    }else {
+      //   old_mpesa_balance =  mpesa_balance;
+    }else{
         // old_mpesa_balance =  mpesa_balance;
-        mpesa_balance = mpesa_balance + amountSENT + transaction_cost;
-        mpesa_balance = mpesa_balance.toFixed(2);
+      //   mpesa_balance = mpesa_balance + amountSENT + transaction_cost;
+        mpesa_balance = parseFloat(mpesa_balance).toFixed(2);
         Tell.style.color = "red";
         Balance.innerHTML = new_balance;
         Balance.style.color = "red";
         transaction_cost = 0;
-        h.innerHTML = '<h5 id="h5" class="confirmation_text">Failed. You do not have enough money in your M-PESA account to send Ksh <span id="amount_sent">' + amountSENT +'</span> to <span id="phone_number_new"> '+TELL+' </span> on <span id="DATE"> ' +date+' </span>. Your M-PESA balance is Ksh<span id="Balance"> '+ mpesa_balance +' </span>. Transaction cost, Ksh <span id="Transaction"> '+ transaction_cost +' </span>. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>'
-
-
-        // h.innerText = "Failed. You do not have enough money in your M-PESA account to send Ksh " + amountSENT +" to "+TELL+". Your M-PESA balance is Ksh"+ mpesa_balance +". Dial *334# to register for the M-PESA overdraw Services Fuliza.";
-        amountSENTcolor.style.color = "red";
-        Tell.style.color = "red";
-        Balance.style.color = "red";
+        h.innerHTML = '<h5 id="h5" class="confirmation_text">Failed. You do not have enough money in your M-PESA account to send Ksh <span id="amount_sent">' + amountSENT +'</span> to <span id="phone_number_new"> '+TELL+' </span> on <span id="DATE"> ' +date+' </span>. Your M-PESA balance is Ksh<span id="Balance"> '+ mpesa_balance +' </span>. Transaction cost, Ksh <span id="Transaction"> '+ transaction_cost +' </span>. Amount you can transact within the day is 299,860.00. Use M-PESA app to send money conviniently mpesaapp.page.link/ggGV</h5>';
     };
 
 
@@ -168,7 +153,7 @@ function agent_services(){
 }
 // ********* AMOUNT TO WITHDRAW 
 function withdraw_amount(){
-    console.log("hello world");
+    console.log("agent_no_withdrawal.style.zIndex = 1");
     agent_no_withdrawal.style.zIndex = 1;
     agent_no.style.zIndex = 0;   
 }
@@ -177,13 +162,13 @@ function agentSuccess(){
    let AGENT_WITHDRAWN = parseInt(AGENT_WITHDRAW.value)
 
     if(AGENT_WITHDRAWN < mpesa_balance){
-    console.log("*********peter*******");
+    console.log("withdraw function is okay.");
+    console.log(success_fail);
         mpesa_balance = mpesa_balance - AGENT_WITHDRAWN;
-        mpesa_balance = mpesa_balance.toFixed(2);
+        mpesa_balance = parseFloat(mpesa_balance).toFixed(2);
         withdraw_success.style.zIndex= 1;
         agent_no_withdrawal.style.zIndex = 0;
         console.log(mpesa_balance);
-
 
         success_fail.innerHTML = 'RBN7ADN231 Confirmed.You have withdrawn Ksh '+AGENT_WITHDRAWN+' from AGENT- '+AGENT_NO+' on 23/2/23 at 9:22 AM  New M-PESA balance is Ksh15.00. Pay to POCHI TODAY. Click https://bit.ly/plb-pay';
 
